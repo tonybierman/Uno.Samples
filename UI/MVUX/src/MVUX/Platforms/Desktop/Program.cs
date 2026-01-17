@@ -1,3 +1,4 @@
+using Uno.UI.Hosting;
 using Uno.UI.Runtime.Skia;
 
 namespace MVUX;
@@ -7,8 +8,8 @@ public class Program
     [STAThread]
     public static void Main(string[] args)
     {
-        var host = SkiaHostBuilder.Create()
-            .App(() => new App())
+        var host = UnoPlatformHostBuilder.Create()
+			.App(() => new App())
             .UseX11()
             .UseLinuxFrameBuffer()
             .UseMacOS()
